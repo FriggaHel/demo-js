@@ -21,8 +21,8 @@ jobs:
         with:
           node-version: 12.x
       - uses: ./.github/actions/saucectl-action
-        working-directory: ./testrunner-toolkit/cypress/
         with:
           version: v0.24.2
           run:
+            working-directory: ./testrunner-toolkit/cypress/
             skip: true
