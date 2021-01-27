@@ -20,7 +20,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-     - uses: ./.github/actions/saucectl-action
-       with:
-         install-only: true
-         version: v0.24.2
+      - uses: ./.github/actions/saucectl-action
+        working-directory: ./testrunner-toolkit/cypress/
+        with:
+          version: v0.24.2
+          run:
+            skip: true
