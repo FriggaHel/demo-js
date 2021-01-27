@@ -23,3 +23,4 @@ jobs:
      - uses: ./.github/actions/saucectl-action
        with:
          install-only: true
+         version: v0.24.2
