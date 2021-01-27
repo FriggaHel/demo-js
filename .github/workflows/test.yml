@@ -23,4 +23,3 @@ jobs:
         with:
           saucectl-version: 0.24.2
           working-directory: ./testrunner-toolkit/cypress/
-          skip-run: true
