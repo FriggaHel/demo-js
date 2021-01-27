@@ -23,6 +23,5 @@ jobs:
       - uses: ./.github/actions/saucectl-action
         with:
           version: v0.24.2
-          run:
-            working-directory: ./testrunner-toolkit/cypress/
-            skip: true
+          working-directory: ./testrunner-toolkit/cypress/
+          skip-run: true
