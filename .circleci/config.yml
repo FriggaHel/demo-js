@@ -9,7 +9,7 @@ jobs:
       - image: circleci/node:dubnium  # primary container for the build job
     steps:
       - checkout
-      - saucectl/run
+      - saucectl/saucectl-run
 
 workflows:
   build:
