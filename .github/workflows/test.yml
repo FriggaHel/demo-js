@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - uses: FriggaHel/saucectl-run-action@master
+      - uses: saucelabs/saucectl-run-action@v1
         with:
           saucectl-version: ${{ env.SAUCECTL_VERSION }}
           working-directory: ./testrunner-toolkit/cypress/
@@ -35,7 +35,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - uses: FriggaHel/saucectl-action@master
+      - uses: saucelabs/saucectl-run-action@v1
         with:
           saucectl-version: ${{ env.SAUCECTL_VERSION }}
           working-directory: ./testrunner-toolkit/cypress/
