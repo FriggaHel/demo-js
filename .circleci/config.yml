@@ -6,7 +6,7 @@ jobs:
   saucectl:
     working_directory: ~/repo/testrunner-toolkit/cypress
     docker:
-      - image: circleci/node:dubnium  # primary container for the build job
+      - image: circleci/node:dubnium
     steps:
       - checkout
       - saucectl/saucectl-run
