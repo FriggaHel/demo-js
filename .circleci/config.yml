@@ -1,46 +1,15 @@
 # We are using parallel jobs here
 version: 2
+orbs:
+  saucectl: friggahel/saucectl@dev:alpha
 jobs:
-  # Not recommended frameworks like NightWatch and Protractor
-  notRecommended:
-    working_directory: ~/repo
+  saucectl:
+    working_directory: ~/repo/testrunner-toolkit/cypress
     docker:
       - image: circleci/node:dubnium  # primary container for the build job
     steps:
       - checkout
-      - run:
-          name: "Update NPM"
-          command: |
-            sudo npm install -g npm@latest
-      - run:
-          name: "Run Nightwatch Webdriver"
-          command: |
-            cd nightwatch/webdriver/examples/update-sauce
-            npm install
-            npm run test.saucelabs.us
-      - run:
-          name: "Run Protractor Best Practices"
-          command: |
-            cd protractor/selenium/best-practices
-            npm install
-            npm run test.saucelabs.us
-  # Testcafe takes pretty long due to the sauce connect tunnel
-  testcafe:
-    working_directory: ~/repo
-    docker:
-      - image: circleci/node:dubnium  # primary container for the build job
-    steps:
-      - checkout
-      - run:
-          name: "Update NPM"
-          command: |
-            sudo npm install -g npm@latest
-      - run:
-          name: "Run TestCafe Best Practices"
-          command: |
-            cd testcafe/best-practices
-            npm install
-            npm run test.saucelabs.us
+      - saucectl/run
   # WebdriverIO headless and best practices
   webdriverio:
     working_directory: ~/repo
