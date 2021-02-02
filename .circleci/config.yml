@@ -1,5 +1,5 @@
 # We are using parallel jobs here
-version: 2
+version: 2.1
 orbs:
   saucectl: friggahel/saucectl@dev:alpha
 jobs:
@@ -9,11 +9,9 @@ jobs:
       - image: circleci/node:dubnium  # primary container for the build job
     steps:
       - checkout
-      - saucectl/run:
-          saucectl-version: latest
+      - saucectl/run
 
 workflows:
-  version: 2
   build:
     jobs:
       - saucectl
