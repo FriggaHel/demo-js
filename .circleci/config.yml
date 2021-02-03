@@ -4,15 +4,15 @@ orbs:
   saucectl: friggahel/saucectl@dev:alpha
 jobs:
   saucectl:
-    working_directory: ~/testrunner-toolkit/cypress
     docker:
       - image: circleci/node:dubnium
     steps:
       - checkout
-      - saucectl/saucectl-run
+      - saucectl/saucectl-run:
+          working_directory: ~/testrunner-toolkit/cypress
 
 workflows:
   build:
     jobs:
       - saucectl
-#####
+######
