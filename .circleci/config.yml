@@ -13,6 +13,8 @@ jobs:
       - saucectl/saucectl-run:
           working-directory: testrunner-toolkit/cypress
   saucectl-sauce:
+    docker:
+      - image: circleci/node:dubnium
     steps:
       - checkout
       - saucectl/saucectl-run:
