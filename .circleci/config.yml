@@ -9,7 +9,7 @@ jobs:
     steps:
       - checkout
       - saucectl/saucectl-run:
-          working-directory: ~/testrunner-toolkit/cypress
+          working-directory: testrunner-toolkit/cypress
 
 workflows:
   build:
