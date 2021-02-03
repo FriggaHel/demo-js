@@ -20,6 +20,7 @@ jobs:
       - saucectl/saucectl-run:
           working-directory: testrunner-toolkit/cypress
           testing-environment: sauce
+          suite: Cypress Chrome
 
 workflows:
   build:
