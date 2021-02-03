@@ -12,6 +12,8 @@ sauce:
 cypress:
   version: 5.6.0
   configFile: "cypress.json"  # We determine related files based on the location of the config file.
+docker:
+  fileTransfer: copy
 suites:
   - name: "Cypress Chrome"
     browser: "chrome"
