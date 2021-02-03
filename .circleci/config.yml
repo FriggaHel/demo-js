@@ -8,6 +8,8 @@ jobs:
       - image: circleci/node:dubnium
     steps:
       - checkout
+      - setup_remote_docker:
+        version: 19.03.13
       - saucectl/saucectl-run:
           working-directory: testrunner-toolkit/cypress
 
