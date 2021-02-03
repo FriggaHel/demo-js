@@ -3,7 +3,7 @@ version: 2.1
 orbs:
   saucectl: friggahel/saucectl@dev:alpha
 jobs:
-  saucectl:
+  saucectl-local:
     docker:
       - image: circleci/node:dubnium
     steps:
@@ -12,9 +12,16 @@ jobs:
           version: 19.03.13
       - saucectl/saucectl-run:
           working-directory: testrunner-toolkit/cypress
+  saucectl-sauce:
+    steps:
+      - checkout
+      - saucectl/saucectl-run:
+          working-directory: testrunner-toolkit/cypress
+          testing-environment: sauce
 
 workflows:
   build:
     jobs:
-      - saucectl
+      - saucectl-local
+      - saucectl-sauce
 ######
